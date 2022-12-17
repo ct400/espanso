@@ -1,0 +1,79 @@
+#!/usr/bin/bash
+# ---
+# title: Espanso espansions for BASHing
+# author: yearluk
+# date: 2022-03-24T09:11:16+0000
+# lastmod: 
+# filename: $XDG_CONFIG_HOME/espanso/match/bash.yml
+# refs:
+# - https://espanso.org/docs/
+# - https://www.gnu.org/software/bash/manual/html_node/
+# ---
+
+matches:
+  - trigger: ":bfm"
+    replace: |
+      #!/usr/bin/bash
+      set -euo pipefail
+      IFS=$'\n\t'
+      # ---
+      # title: $|$
+      # author: {{username}}
+      # date: {isodatetimezone}
+      # lastmod: 
+      # filename: 
+      # refs:
+      # - 
+      # cmd:
+      # ---
+    vars:
+    - name: isodatetimezone
+      type: date
+      params:
+        format: "%Y-%m-%dT%H:%M:%S%z"
+    - name: username
+      type: shell
+      params:
+        shell: sh
+        cmd: "echo $USER" 
+
+  - trigger: ":bif"
+    replace: |
+      if [[ ]] ; then
+        echo "true"
+      else
+        echo "false"
+      fi
+
+# most common checks. NOT complete
+# -a file       True if file exists.
+# -d file       True if file exists and is a directory.
+# -e file       True if file exists.
+# -f file       True if file exists and is a regular file.
+# -r file       True if file exists and is readable.
+# -s file       True if file exists and has a size greater than zero.
+# -w file       True if file exists and is writable.
+# -x file       True if file exists and is executable.
+# -L file       True if file exists and is a symbolic link.
+# -N file       True if file exists and has been modified since it was last read.
+
+# file1 -ef file2     True if file1 and file2 refer to the same device and inode numbers.
+# file1 -nt file2     True if file1 is newer (modification date) than file2, or if file1 exists and file2 does not.
+# file1 -ot file2
+
+# -v VAR     True if the shell variable VAR is set (has been assigned a value).
+# -R VAR     True if the shell variable VAR is set and is a name reference.
+
+# -z string              True if the length of string is zero.
+# -n string              True if the length of string is non-zero.
+# string1 == string2     True if the strings are equal.
+# string1 = string2      True (POSIX) if the strings are equal.
+# string1 != string2     True if the strings are not equal.
+# string1 < string2      True if string1 sorts before string2 lexicographically.
+# string1 > string2      True if string1 sorts after string2 lexicographically.
+# arg1 OP arg2
+
+#     OP is one of ‘-eq’, ‘-ne’, ‘-lt’, ‘-le’, ‘-gt’, or ‘-ge’. These arithmetic binary operators return true if arg1 is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to arg2, respectively. Arg1 and arg2 may be positive or negative integers. When used with the [[ command, Arg1 and Arg2 are evaluated as arithmetic expressions (see Shell Arithmetic). 
+
+
+

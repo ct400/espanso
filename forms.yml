@@ -1,0 +1,34 @@
+matches:
+  - trigger: ":mdtags"
+    replace: |
+      ---
+      title: $|$
+      date: {{isodatetimezone}}
+      draft: true
+      categories:
+      - null
+      tags:
+      - {{form1.tag}}
+      ---
+    vars:
+      - name: isodatetimezone
+        type: date
+        params:
+          format: "%Y-%m-%dT%H:%M:%S%z"
+      - name: tags
+        type: shell
+        params:
+          cmd: "python3 ~/.config/espanso/scripts/md-tags.py"
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Select a tag:
+            [[tag]]
+          fields:
+            tag:
+              type: list
+              values: "{{tags}}"
+
+
+
