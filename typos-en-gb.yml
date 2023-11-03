@@ -1,0 +1,67 @@
+# ---
+# title: Espanso espansions en-GB typos
+# author: salopst
+# date: :2023-10-08T05:43:51+01:00
+# lastmod: 
+# filename: $XDG_CONFIG_HOME/espanso/match/typos-en-gb.yml
+# refs:
+# - https://espanso.org/docs/
+# ---
+
+matches:
+  - trigger: ;inux
+    replace: "Linux"
+    propagate_case: true
+    word: true
+  - trigger: :inux
+    replace: "Linux"
+    propagate_case: true
+    word: true
+  - trigger: didnt
+    replace: "didn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: doesnt
+    replace: "doesn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: "dosen\x27t"
+    replace: "doesn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: hasnt
+    replace: "hasn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: isnt
+    replace: "isn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: shoudln
+    replace: "should\x2C\x20shouldn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: thast
+    replace: "that\x2C\x20that\x27s"
+    propagate_case: true
+    word: true
+  - trigger: theyre
+    replace: "they\x27re"
+    propagate_case: true
+    word: true
+  - trigger: todays
+    replace: "today\x27s"
+    propagate_case: true
+    word: true
+  - trigger: wasnt
+    replace: "wasn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: yuo
+    replace: you
+    propagate_case: true
+    word: true
+  - trigger: zeebra
+    replace: zebra
+    propagate_case: true
+    word: true
